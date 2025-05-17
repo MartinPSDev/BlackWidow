@@ -1,0 +1,48 @@
+# Archivos compilados
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Directorios de compilación
+build/
+out/
+debug/
+release/
+bin/
+lib/
+
+# Archivos de CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+cmake_install.manifest
+cmake_uninstall.manifest
+
+# Archivos de IDE
+.vs/
+.vscode/
+*.swp
+*.swo
+.idea/
+*.cbp
+*.user
+
+# Archivos de respaldo
+*~
+*.bak
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencias
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
