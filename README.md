@@ -21,6 +21,7 @@ BlackWidow/
 │   ├── HTML/              # Parser y procesamiento HTML
 │   ├── CSS/               # Parser y procesamiento CSS
 │   ├── JavaScript/        # Motor JavaScript
+│   ├── WebAssembly/       # Motor y parser de WebAssembly
 │   └── Network/           # Gestión de red y protocolos
 ├── Security/              # Módulos de seguridad y hacking
 │   ├── Scanners/          # Escáneres de vulnerabilidades

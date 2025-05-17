@@ -13,6 +13,7 @@ add_subdirectory(HTML)
 add_subdirectory(CSS)
 add_subdirectory(JavaScript)
 add_subdirectory(Network)
+add_subdirectory(WebAssembly)
 
 # Configuración de la biblioteca
 target_include_directories(Core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

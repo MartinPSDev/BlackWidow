@@ -7,13 +7,15 @@
 #include "Browser.h"
 #include "../../Security/Interceptor/ProxyInterceptor.h"
 #include "../../Utils/Logging/Logger.h"
+#include "../WebAssembly/WasmIntegration.h"
 
 namespace Core::Browser {
 
 Browser::Browser() : 
     m_initialized(false),
     m_hackingModeEnabled(false),
-    m_interceptor(nullptr) {
+    m_interceptor(nullptr),
+    m_wasmIntegration(nullptr) {
 }
 
 Browser::~Browser() {
@@ -42,6 +44,11 @@ bool Browser::initialize() {
 
     if (!initializeSecurityComponents()) {
         Utils::Logging::Logger::error("Error al inicializar los componentes de seguridad");
+        return false;
+    }
+
+    if (!initializeWebAssembly()) {
+        Utils::Logging::Logger::error("Error al inicializar WebAssembly");
         return false;
     }
 
@@ -95,6 +102,21 @@ bool Browser::initializeNetworkStack() {
 bool Browser::initializeRenderingEngine() {
     Utils::Logging::Logger::info("Inicializando motor de renderizado");
     // Implementación de la inicialización del motor de renderizado
+    return true;
+}
+
+bool Browser::initializeWebAssembly() {
+    Utils::Logging::Logger::info("Inicializando soporte de WebAssembly");
+    
+    // Crear e inicializar el componente de integración WebAssembly
+    m_wasmIntegration = std::make_shared<Core::WebAssembly::WasmIntegration>(shared_from_this());
+    
+    if (!m_wasmIntegration->initialize()) {
+        Utils::Logging::Logger::error("Error al inicializar el motor WebAssembly");
+        return false;
+    }
+    
+    Utils::Logging::Logger::info("Soporte de WebAssembly inicializado correctamente");
     return true;
 }
 

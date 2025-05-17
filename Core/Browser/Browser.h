@@ -9,10 +9,15 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <functional>
 
 // Forward declarations
 namespace Security::Interceptor {
     class ProxyInterceptor;
+}
+
+namespace Core::WebAssembly {
+    class WasmIntegration;
 }
 
 namespace Core::Browser {
@@ -21,7 +26,7 @@ namespace Core::Browser {
  * Clase principal del navegador BlackWidow
  * Coordina todos los componentes y gestiona el ciclo de vida del navegador
  */
-class Browser {
+class Browser : public std::enable_shared_from_this<Browser> {
 public:
     Browser();
     ~Browser();
@@ -64,11 +69,13 @@ private:
 
     // Componentes principales
     std::shared_ptr<Security::Interceptor::ProxyInterceptor> m_interceptor;
+    std::shared_ptr<Core::WebAssembly::WasmIntegration> m_wasmIntegration;
 
     // Métodos privados de inicialización
     bool initializeNetworkStack();
     bool initializeRenderingEngine();
     bool initializeSecurityComponents();
+    bool initializeWebAssembly();
 };
 
 } // namespace Core::Browser
