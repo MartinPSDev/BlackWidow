@@ -1,0 +1,122 @@
+/* Tema inspirado en Tor Browser con colores púrpura */
+
+:root {
+    --tor-purple-dark: #2D0A31;
+    --tor-purple-medium: #5A2D62;
+    --tor-purple-light: #8E44AD;
+    --tor-purple-accent: #9B59B6;
+    --tor-text-light: #F3F3F3;
+    --tor-text-dark: #1A1A1A;
+    --tor-background: #121212;
+    --tor-border: #3D3D3D;
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--tor-background);
+    color: var(--tor-text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: var(--tor-purple-dark);
+    border-bottom: 1px solid var(--tor-purple-medium);
+}
+
+/* Botones */
+button, .button {
+    background-color: var(--tor-purple-medium);
+    color: var(--tor-text-light);
+    border: 1px solid var(--tor-purple-light);
+    border-radius: 3px;
+    padding: 8px 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover, .button:hover {
+    background-color: var(--tor-purple-light);
+}
+
+/* Pestañas */
+.tab {
+    background-color: var(--tor-purple-dark);
+    color: var(--tor-text-light);
+    border-top: 2px solid transparent;
+}
+
+.tab.active {
+    background-color: var(--tor-background);
+    border-top: 2px solid var(--tor-purple-accent);
+}
+
+/* Paneles de herramientas */
+.tool-panel {
+    background-color: var(--tor-background);
+    border: 1px solid var(--tor-border);
+    border-radius: 4px;
+}
+
+.tool-panel-header {
+    background-color: var(--tor-purple-dark);
+    color: var(--tor-text-light);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--tor-purple-medium);
+}
+
+/* Campos de entrada */
+input, textarea, select {
+    background-color: var(--tor-background);
+    color: var(--tor-text-light);
+    border: 1px solid var(--tor-border);
+    border-radius: 3px;
+    padding: 6px 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--tor-purple-light);
+    outline: none;
+}
+
+/* Consola de hacking */
+.hack-console {
+    background-color: var(--tor-purple-dark);
+    color: var(--tor-text-light);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.hack-console-output {
+    background-color: var(--tor-background);
+    padding: 8px;
+    border: 1px solid var(--tor-border);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Alertas de seguridad */
+.security-alert {
+    background-color: var(--tor-purple-medium);
+    border-left: 4px solid var(--tor-purple-light);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.security-alert.high {
+    background-color: #7D3C98;
+    border-left-color: #C0392B;
+}
+
+.security-alert.medium {
+    background-color: #5B2C6F;
+    border-left-color: #F39C12;
+}
+
+.security-alert.low {
+    background-color: #4A235A;
+    border-left-color: #2ECC71;
+}
