@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Prueba - BlackWidow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            color: #7b1fa2; /* Color púrpura de Tor */
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .info-box {
+            background-color: #e9e9e9;
+            border-left: 4px solid #7b1fa2;
+            padding: 10px 15px;
+            margin: 20px 0;
+        }
+        
+        button {
+            background-color: #7b1fa2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a BlackWidow</h1>
+        
+        <div class="info-box">
+            <p>Esta es una página de prueba para demostrar el funcionamiento del motor de renderizado.</p>
+        </div>
+        
+        <h2>Características del motor de renderizado:</h2>
+        <ul>
+            <li>Análisis de HTML y construcción del DOM</li>
+            <li>Procesamiento de estilos CSS</li>
+            <li>Ejecución de JavaScript</li>
+            <li>Integración con herramientas de desarrollo</li>
+        </ul>
+        
+        <p>Haz clic en el botón para ejecutar una prueba de JavaScript:</p>
+        <button id="testButton">Ejecutar prueba</button>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        document.getElementById('testButton').addEventListener('click', function() {
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = '<p>JavaScript ejecutado correctamente a las ' + new Date().toLocaleTimeString() + '</p>';
+        });
+    </script>
+</body>
+</html>

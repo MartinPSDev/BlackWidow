@@ -9,6 +9,7 @@ add_library(UI
 add_subdirectory(Widgets)
 add_subdirectory(HackConsole)
 add_subdirectory(Themes)
+add_subdirectory(DevTools)
 
 # Configuración de la biblioteca
 target_include_directories(UI PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
