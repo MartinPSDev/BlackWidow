@@ -9,7 +9,7 @@ Un navegador web orientado al bugbounty y hacking ético, con funcionalidades na
 - Consola de desarrollador orientada al hacking con capacidades de detección de subdominios
 - Análisis de archivos JavaScript para identificar posibles vulnerabilidades
 - Generación de informes detallados de seguridad
-- Funcionalidades similares a herramientas como Burp Suite, Nmap y Nuclei integradas nativamente
+- Funcionalidades similares a herramientas como Burp Suite (incluyendo capacidades de Wappalyzer), Nmap y Nuclei integradas nativamente
 
 ## Estructura del Proyecto
 
