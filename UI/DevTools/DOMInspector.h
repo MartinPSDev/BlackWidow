@@ -4,8 +4,14 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <set>
 
 namespace BlackWidow {
+
+namespace Core {
+    class RenderingEngine; // Declaración adelantada
+}
+
 namespace UI {
 
 /**
@@ -18,6 +24,13 @@ class DOMInspector {
 public:
     DOMInspector();
     ~DOMInspector();
+
+    /**
+     * @brief Conecta el inspector DOM al motor de renderizado
+     * @param engine Puntero al motor de renderizado
+     * @param pageId ID de la página a inspeccionar
+     */
+    void connectToRenderingEngine(Core::RenderingEngine* engine, const std::string& pageId);
 
     /**
      * @brief Selecciona un elemento del DOM usando un selector CSS
@@ -44,7 +57,7 @@ public:
     /**
      * @brief Obtiene los estilos computados de un elemento
      * @param elementId ID del elemento
-     * @return Mapa de propiedades CSS y sus valores
+     * @return Mapa de propiedades CSS y sus valores en formato JSON
      */
     std::string getComputedStyles(const std::string& elementId);
 
@@ -77,6 +90,9 @@ private:
     };
 
     std::vector<ElementInfo> m_selectedElements;
+    std::set<std::string> m_highlightedElements; // Elementos actualmente resaltados
+    Core::RenderingEngine* m_renderEngine; // Puntero al motor de renderizado
+    std::string m_currentPageId; // ID de la página actual
 };
 
 } // namespace UI
