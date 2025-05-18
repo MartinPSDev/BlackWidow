@@ -6,7 +6,7 @@ file(GLOB THEMES_HEADERS "*.h")
 file(GLOB THEMES_CSS "*.css")
 
 # Añadir los archivos a la biblioteca UI
-target_sources(BlackWidowUI
+target_sources(UI
     PRIVATE
         ${THEMES_SOURCES}
         ${THEMES_HEADERS}
