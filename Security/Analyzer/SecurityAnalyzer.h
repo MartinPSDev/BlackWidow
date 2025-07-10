@@ -118,6 +118,30 @@ public:
      * @return Cadena JSON con el informe
      */
     std::string generateJsonReport(const SecurityAnalysisReport& report);
+    
+    /**
+     * Realiza análisis avanzado de SQL injection con técnicas específicas
+     * @param url URL del objetivo a analizar
+     * @param params Parámetros base para las pruebas
+     * @param headers Cabeceras HTTP a incluir en la petición
+     * @return Informe del análisis avanzado de SQL injection
+     */
+    SecurityAnalysisReport performAdvancedSqlAnalysis(
+        const std::string& url,
+        const std::map<std::string, std::string>& params,
+        const std::map<std::string, std::string>& headers = {});
+    
+    /**
+     * Realiza análisis avanzado de XSS con técnicas de evasión
+     * @param url URL del objetivo a analizar
+     * @param params Parámetros base para las pruebas
+     * @param headers Cabeceras HTTP a incluir en la petición
+     * @return Informe del análisis avanzado de XSS
+     */
+    SecurityAnalysisReport performAdvancedXssAnalysis(
+        const std::string& url,
+        const std::map<std::string, std::string>& params,
+        const std::map<std::string, std::string>& headers = {});
 
 private:
     std::unique_ptr<XssAnalyzer> xssAnalyzer;              // Analizador de XSS
@@ -130,6 +154,13 @@ private:
      * @param report Informe a actualizar
      */
     void updateReportStatistics(SecurityAnalysisReport& report);
+    
+    /**
+     * Escapa caracteres especiales para JSON
+     * @param input Cadena a escapar
+     * @return Cadena escapada para JSON
+     */
+    std::string escapeJsonString(const std::string& input);
     
     /**
      * Obtiene la fecha y hora actual en formato string
